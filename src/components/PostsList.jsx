@@ -1,11 +1,9 @@
 import Post from "./Post";
-import NewPost from "./NewPost";
 import classes from "./PostsList.module.css";
-import Modal from "./Modal";
-import { useEffect, useState } from "react";
-import { FcEnteringHeavenAlive } from "react-icons/fc";
 
-function PostsList({ isPosting, onStopPosting }) {
+import { useEffect, useState } from "react";
+
+function PostsList() {
   const [posts, setPosts] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
 
@@ -33,11 +31,6 @@ function PostsList({ isPosting, onStopPosting }) {
   }
   return (
     <>
-      {isPosting ? (
-        <Modal onClose={onStopPosting}>
-          <NewPost onCancel={onStopPosting} onAddPost={addPostHandler} />
-        </Modal>
-      ) : null}
       {!isFetching && posts.length > 0 ? (
         <ul className={classes.posts}>
           {posts.map((post) => (
