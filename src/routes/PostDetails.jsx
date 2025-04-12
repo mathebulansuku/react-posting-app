@@ -1,4 +1,5 @@
 import { useLoaderData, Link } from "react-router-dom";
+
 import Modal from "../components/Modal";
 import classes from "./PostDetails.module.css";
 
@@ -20,7 +21,6 @@ function PostDetails() {
       </Modal>
     );
   }
-
   return (
     <Modal>
       <main className={classes.details}>
